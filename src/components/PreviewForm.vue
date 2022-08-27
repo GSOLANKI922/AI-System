@@ -2,7 +2,7 @@
   <!-- Form preview start -->
   <div v-if="isPreview" class="previewFormContainer">
     <div class="previewHeader">
-      <i @click="closePreview" class="pi pi-arrow-left" />
+      <i @click="closePreview" class="pi pi-arrow-left"/>
       <h1>Form Preview</h1>
     </div>
     <div class="previewContainer">
@@ -70,7 +70,6 @@
             placeholder="Select Types"
           />
         </div>
-
         <div
           v-if="tableData.type.name == 'Calender' && tableData.view"
           class="fieldContainer"
@@ -211,7 +210,7 @@ export default {
 }
 
 .previewContainer {
-  border: 2px solid lightgray;  
+  border: 2px solid lightgray;
   border-radius: 4px;
   padding-block: 20px;
   padding-inline: 30px;
@@ -223,7 +222,7 @@ export default {
 
 .formInput {
   display: flex;
-  width: 100%;
+  width: 100%; 
   flex-direction: column;
   margin-bottom: 20px;
 }
@@ -243,7 +242,7 @@ export default {
 
 .previewHeader {
   display: flex;
-  width: 100%;
+  width: 100%; 
   position: relative;
   margin-bottom: 20px;
   justify-content: center;

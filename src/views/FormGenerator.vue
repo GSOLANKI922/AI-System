@@ -18,14 +18,13 @@
               class="p-input"
               type="text"
               :key="index"
-              v-model="css.css"
+              v-model="css.css"   
             />
-            <Button @click="handleDeleteCss(index)" class="p-cancel">
+            <Button @click="handleDeleteCss(index)" class="p-cancel"> 
               <i class="pi pi-minus"></i>
             </Button>
           </div>
         </div>
-
         <div class="noData" v-if="allCss.length == 0">No Css URL's</div>
       </div>
       <!-- css url's end -->
@@ -117,22 +116,20 @@
                 type="text"
               />
             </div>
-
             <div class="inputContainer">
               <input
                 v-model="tableData.view"
                 class="inputCheckbox"
                 type="checkbox"
               />
-            </div>
-
+            </div>  
             <div class="inputContainer">
               <input
                 v-model="tableData.edit"
                 class="inputCheckbox"
                 type="checkbox"
               />
-            </div>  
+            </div>
 
             <div class="inputContainer">
               <inputText
@@ -142,7 +139,7 @@
               />
             </div>
 
-            <div class="inputContainer">
+            <div class="inputContainer">  
               <Dropdown
                 v-model="tableData.gm"
                 optionLabel="name"
@@ -173,6 +170,7 @@
       <div v-if="!isPreview" class="previewButton">
         <Button @click="handleSubmit"> Preview </Button>
       </div>
+      <div></div>
 
       <!-- Form preview start -->
       <PreviewFormVue
@@ -229,7 +227,7 @@ export default {
         name: "Textbox",
       },
       {
-        name: "Checkbox",           
+        name: "Checkbox",
       },
       {
         name: "Radio Group",
@@ -500,8 +498,8 @@ export default {
   transition: all 0.6s ease-in-out;
 }
 
-.p-table-cancel:hover{
-  background-color:red;
+.p-table-cancel:hover {
+  background-color: red;
 }
 
 .noData-table {
