@@ -86,7 +86,7 @@
         </div>
         <!-- Input type textarea end -->
 
-        <!-- Input type select start -->
+        <!-- Input type select start -->  
         <div
           v-if="tableData.type.name == 'Select' && tableData.view"
           class="fieldContainer"
@@ -127,7 +127,7 @@
           }}</Button>
         </div>
         <!-- Input type button end -->
-
+        
         <!-- Input type color start -->
         <div
           v-if="tableData.type.name == 'Color Picker' && tableData.view"
@@ -161,7 +161,7 @@ import Dropdown from "primevue/dropdown";
 export default {
   name: "preview-form",
   html: "",
-  link: "",
+  link: "", 
   components: {
     Checkbox,
     RadioButton,
@@ -231,7 +231,7 @@ export default {
 
 .label {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 24px; 
 }
 
 .fieldContainer {
@@ -326,6 +326,11 @@ export default {
   outline-offset: 0;
   box-shadow: 0 0 0 0.2rem #c7d2fe;
   border-color: #6366f1;
+}
+
+.label{
+ font-weight: 700;
+ font-size: 24px;
 }
 
 </style>
