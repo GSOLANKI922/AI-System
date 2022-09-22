@@ -70,7 +70,7 @@
           }}</Button>
         </div>
         <!-- Input type button end -->
-
+        
         <!-- Input type color start -->
         <div v-if="tableData.type.name == 'Color Picker' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
@@ -98,7 +98,7 @@ import Dropdown from "primevue/dropdown";
 export default {
   name: "preview-form",
   html: "",
-  link: "",
+  link: "", 
   components: {
     Checkbox,
     RadioButton,
@@ -169,7 +169,7 @@ export default {
 .label {
   margin-bottom: 10px;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 24px; 
 }
 
 .fieldContainer {
@@ -266,6 +266,12 @@ export default {
   box-shadow: 0 0 0 0.2rem #c7d2fe; 
   border-color: #6366f1;              
 }
+
+.label{
+ font-weight: 700;
+ font-size: 24px;
+}
+
 </style>
 
 
