@@ -8,150 +8,87 @@
     <div class="previewContainer">
       <div v-for="tableData in tablesData" :key="tableData" class="formInput">
         <!-- Input type text start -->
-        <div
-          v-if="tableData.type.name == 'Textbox' && tableData.view"
-          class="fieldContainer"
-        >
+        <div v-if="tableData.type.name == 'Textbox' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
-          <InputText
-            :disabled="!tableData.edit"
-            :value="tableData.value"
-            :name="tableData.name"
-            class="p-inputPreview"
-          />
+          <InputText :disabled="!tableData.edit" :value="tableData.value" :name="tableData.name"
+            class="p-inputPreview" />
         </div>
         <!-- Input type text end -->
-				
-        <!-- Input type time start -->
-        <div
-          v-if="tableData.type.name == 'Time Picker' && tableData.view"
-          class="fieldContainer"
-        >
+
+        <!-- Input type time start --> 
+        <div v-if="tableData.type.name == 'Time Picker' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
-          <input
-            type="time"
-            :name="tableData.name"
-            :value="tableData.value"
-            class="inputPreview"
-            :disabled="!tableData.edit"
-          />
+          <input type="time" :name="tableData.name" :value="tableData.value" class="inputPreview"
+            :disabled="!tableData.edit" />
         </div>
         <!-- Input type time end -->
 
         <!-- Input type checkbox start -->
-        <div
-          v-if="tableData.type.name == 'Checkbox' && tableData.view"
-          class="fieldContainer"
-        >
+        <div v-if="tableData.type.name == 'Checkbox' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
-          <Checkbox
-            v-model="checked"
-            :binary="true"
-            :disabled="!tableData.edit"
-            :name="tableData.name"
-            class="p-inputPreview"
-          />
+          <Checkbox v-model="checked" :binary="true" :disabled="!tableData.edit" :name="tableData.name"
+            class="p-inputPreview" />
         </div>
         <!-- Input type checkbox end -->
 
         <!-- Input type radiobutton start -->
-        <div
-          v-if="tableData.type.name == 'Radio Group' && tableData.view"
-          class="fieldContainer"
-        >
+        <div v-if="tableData.type.name == 'Radio Group' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
-          <RadioButton
-            :value="!tableData.value"
-            :name="tableData.name"
-            class="p-inputPreview"
-            :disabled="!tableData.edit"
-          />
-        </div>
-        <!-- Input type radiobutton end -->
+          <RadioButton :value="!tableData.value" :name="tableData.name" class="p-inputPreview"
+            :disabled="!tableData.edit"  />
+        </div>  
+        <!-- Input type radiobutton end --> 
 
         <!-- Input type textarea start -->
-        <div
-          v-if="tableData.type.name == 'Textarea' && tableData.view"
-          class="fieldContainer"
-        >
+        <div v-if="tableData.type.name == 'Textarea' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
-          <Textarea
-            :disabled="!tableData.edit"
-            rows="5"
-            cols="30"
-            :value="tableData.value"
-            :name="tableData.name"
-            class="p-inputPreview"
-          />
+          <Textarea :disabled="!tableData.edit" rows="5" cols="30" :value="tableData.value" :name="tableData.name" 
+            class="p-inputPreview" />
         </div>
         <!-- Input type textarea end -->
 
         <!-- Input type select start -->
-        <div
-          v-if="tableData.type.name == 'Select' && tableData.view"
-          class="fieldContainer"
-        >
+        <div v-if="tableData.type.name == 'Select' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
-          <Dropdown
-            :name="tableData.name"
-            :disabled="!tableData.edit"
-            optionLabel="name"
-            :options="tableData.options"
-            placeholder="Select Types"
-          />
+          <Dropdown v-model="tableData.option" :name="tableData.name" :disabled="!tableData.edit" optionLabel="name" 
+            :options="tableData.options" placeholder="Select Types" />
         </div>
         <!-- Input type select end -->
 
         <!-- Input type calender start -->
-        <div
-          v-if="tableData.type.name == 'Calender' && tableData.view"
-          class="fieldContainer"
-        >
-          <label class="label">{{ tableData.label }}</label>
-          <Calendar
-            :disabled="!tableData.edit"
-            v-model="tableData.value"
-            :name="tableData.name"
-          />
-        </div>
+        <div v-if="tableData.type.name == 'Calender' && tableData.view" class="fieldContainer">
+          <label class="label">{{ tableData.label }}</label> 
+          <Calendar :disabled="!tableData.edit" v-model="tableData.value" :name="tableData.name" />
+        </div> 
         <!-- Input type calender end -->
 
         <!-- Input type button start -->
-        <div 
-          v-if="tableData.type.name == 'Button' && tableData.view"
-          class="fieldContainer"
-        >
+        <div v-if="tableData.type.name == 'Button' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
           <Button :name="tableData.name" :disabled="!tableData.edit">{{
-            tableData.value
+          tableData.value
           }}</Button>
         </div>
         <!-- Input type button end -->
 
         <!-- Input type color start -->
-        <div
-          v-if="tableData.type.name == 'Color Picker' && tableData.view"
-          class="fieldContainer"
-        >
+        <div v-if="tableData.type.name == 'Color Picker' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
-          <ColorPicker
-            :disabled="!tableData.edit"
-            v-model="tableData.value"
-            :name="tableData.name"
-            class="p-inputPreview"
-          />
+          <ColorPicker :disabled="!tableData.edit" v-model="tableData.value" :name="tableData.name"
+            class="p-inputPreview" />
         </div>
         <!-- Input type color end -->
       </div>
     </div>
   </div>
+
   <!-- Form preview end -->
 </template>
 
 <script>
 import Checkbox from "primevue/checkbox";
 import RadioButton from "primevue/radiobutton";
-import Calendar from "primevue/calendar";
+import Calendar from "primevue/calendar";   
 import ColorPicker from "primevue/colorpicker";
 import InputText from "primevue/inputtext";
 import Button from "primevue/button";
@@ -185,14 +122,14 @@ export default {
 </script> 
 
 <style scoped>
-.previewFormContainer {
+.previewFormContainer {            
   display: flex;
   padding: 10px;
   align-items: center;
   margin-top: 30px;
   flex-direction: column;
 }
-
+ 
 .p-preview-button {
   margin-top: 10px;
   width: fit-content;
@@ -206,7 +143,7 @@ export default {
   border: 2px solid lightgray;
   border-radius: 4px;
   padding-block: 20px;
-  padding-inline: 30px;
+  padding-inline: 30px;      
   display: flex;
   padding: auto;
   flex-direction: column;
@@ -214,14 +151,14 @@ export default {
   width: 80%;
 }
 
-.formInput {
+.formInput {                                                
   display: flex;
   width: 100%;
   flex-direction: column;
   margin-bottom: 20px;
 }
 
-.formInput:last-child {
+.formInput:last-child { 
   margin: 0;
 }
 
@@ -230,6 +167,7 @@ export default {
 }
 
 .label {
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: 24px;
 }
@@ -239,12 +177,12 @@ export default {
   flex-direction: column;
 }
 
-.fieldContainer > button {
+.fieldContainer>button {
   width: max-content;
   margin-top: 10px;
 }
 
-.p-cancel {
+.p-cancel { 
   background-color: red;
 }
 
@@ -288,7 +226,7 @@ export default {
 }
 
 .p-inputPreview {
-  margin-top: 10px;
+  margin-top: 10px;    
 }
 
 .label {
@@ -305,27 +243,32 @@ export default {
   align-items: center;
 }
 
-.previewHeader > i {
-  position: absolute;
+.previewHeader>i {
+  position: absolute; 
   top: 15px;
   cursor: pointer;
   left: 10%;
 }
 
 .inputPreview {
-  font-size: 1rem;
-  margin-top: 10px;
+  font-size: 1rem;   
+  margin-top: 10px; 
   color: #495057;
-  padding: 0.75rem 0.75rem;
-  border: 1px solid #ced4da;
+  padding: 0.75rem 0.75rem; 
+  border: 1px solid #ced4da;   
   border-radius: 6px;
 }
+
 
 .inputPreview:focus {
   outline: 0 none;
   outline-offset: 0;
-  box-shadow: 0 0 0 0.2rem #c7d2fe;
-  border-color: #6366f1;
+  box-shadow: 0 0 0 0.2rem #c7d2fe; 
+  border-color: #6366f1;              
 }
-
 </style>
+
+
+
+
+
