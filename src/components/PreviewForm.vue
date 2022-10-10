@@ -26,17 +26,17 @@
         <!-- Input type checkbox start -->
         <div v-if="tableData.type.name == 'Checkbox' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
-          <Checkbox v-model="checked" :binary="true" :disabled="!tableData.edit" :name="tableData.name"
+          <Checkbox v-model="tableData.value" :binary="true" :disabled="!tableData.edit" :name="tableData.name"
             class="p-inputPreview" />
         </div>
         <!-- Input type checkbox end -->
-
+        
         <!-- Input type radiobutton start -->
         <div v-if="tableData.type.name == 'Radio Group' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
           <RadioButton :value="!tableData.value" :name="tableData.name" class="p-inputPreview"
             :disabled="!tableData.edit"  />
-        </div>  
+        </div>
         <!-- Input type radiobutton end --> 
 
         <!-- Input type textarea start -->
@@ -44,7 +44,7 @@
           <label class="label">{{ tableData.label }}</label>
           <Textarea :disabled="!tableData.edit" rows="5" cols="30" :value="tableData.value" :name="tableData.name" 
             class="p-inputPreview" />
-        </div>
+      </div>
         <!-- Input type textarea end -->
 
         <!-- Input type select start -->
@@ -57,16 +57,16 @@
 
         <!-- Input type calender start -->
         <div v-if="tableData.type.name == 'Calender' && tableData.view" class="fieldContainer">
-          <label class="label">{{ tableData.label }}</label> 
+          <label class="label">{{ tableData.label }}</label>
           <Calendar :disabled="!tableData.edit" v-model="tableData.value" :name="tableData.name" />
-        </div> 
+        </div>
         <!-- Input type calender end -->
 
         <!-- Input type button start -->
         <div v-if="tableData.type.name == 'Button' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
           <Button :name="tableData.name" :disabled="!tableData.edit">{{
-          tableData.value
+          tableData.value 
           }}</Button>
         </div>
         <!-- Input type button end -->
@@ -74,15 +74,15 @@
         <!-- Input type color start -->
         <div v-if="tableData.type.name == 'Color Picker' && tableData.view" class="fieldContainer">
           <label class="label">{{ tableData.label }}</label>
-          <ColorPicker :disabled="!tableData.edit" v-model="tableData.value" :name="tableData.name"
+          <ColorPicker :disabled="!tableData.edit" v-model="tableData.valuxe" :name="tableData.name"
             class="p-inputPreview" />
-        </div>
+        </div> 
         <!-- Input type color end -->
       </div>
     </div>
   </div>
-
-  <!-- Form preview end -->
+         
+  <!-- Form preview end -->               
 </template>
 
 <script>
@@ -99,20 +99,20 @@ export default {
   name: "preview-form",
   html: "",
   link: "", 
-  components: {
+  components: {  
     Checkbox,
     RadioButton,
     Calendar,
     InputText,
     Button,
-    Textarea,
+    Textarea, 
     Dropdown,
     ColorPicker,
   },
   props: {
     isPreview: Boolean,
     tablesData: Array,
-  },
+  },     
   methods: {
     closePreview() {
       this.$emit("preview", false);
@@ -258,7 +258,6 @@ export default {
   border: 1px solid #ced4da;   
   border-radius: 6px;
 }
-
 
 .inputPreview:focus {
   outline: 0 none;
